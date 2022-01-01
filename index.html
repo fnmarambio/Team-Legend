@@ -1,0 +1,923 @@
+<style>
+    body{
+        background-color: aquamarine;
+        background-image: url('portada-bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center;
+        background-attachment: fixed ;
+    }
+    
+    .bg{
+           width: 80vw;
+           
+           
+           
+       }
+    </style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Team Legend</title>
+    <link rel="shortcut icon" href="teamico.ico" />
+    <!--Canvas-->
+    <script src="html2canvas.min.js"></script>
+
+    <!--Styles-->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!--Fonts-->
+    <link rel="stylesheet" href="fonts.css" />
+
+    <!--Fontawesome-->
+
+    <script
+      src="https://kit.fontawesome.com/9c7da1e27f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  
+  <body>
+    <div class="">
+      <div
+        class="card mb-4 mt-4 mx-auto px-5 py-3 shadow"
+        style="width: 80vw; background-color: RGBA(8, 18, 28, 0.7)"
+      >
+        <h1
+          style="text-align: center; font-family: toker; color: white"
+          class="mt-1 mb-3"
+        >
+          TEAM LEGEND
+        </h1>
+
+        <div class="mx-auto">
+          <div class="input-group mb-4" style="width: 50vw">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="nombre1"
+              aria-describedby="sumoner1"
+              style="
+                background-color: #202b36;
+                color: white;
+                margin-right: 10px;
+              "
+              id="sum1"
+              maxlength="20"
+              placeholder="TOP"
+            />
+            <label type="button" class="btn btn-primary rounded-end" id="btn1">
+              <i class="fas fa-upload"></i
+            ></label>
+            <input
+              type="file"
+              class="form-control"
+              id="foto1"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="vista(event)"
+              style="background-color: #202b36; color: white; display: none"
+            />
+          </div>
+
+          <div class="input-group mb-4" style="width: 50vw">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="nombre2"
+              aria-describedby="sumoner2"
+              style="
+                background-color: #202b36;
+                color: white;
+                margin-right: 10px;
+              "
+              id="sum2"
+              placeholder="JUNGLE"
+            />
+            <label type="button" class="btn btn-primary rounded-end" id="btn2">
+              <i class="fas fa-upload"></i
+            ></label>
+            <input
+              type="file"
+              class="form-control"
+              id="foto2"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="vista2(event)"
+              style="display: none"
+            />
+          </div>
+
+          <div class="input-group mb-4" style="width: 50vw">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="nombre3"
+              aria-describedby="sumoner3"
+              style="
+                background-color: #202b36;
+                color: white;
+                margin-right: 10px;
+              "
+              id="sum3"
+              placeholder="MID"
+            />
+            <label type="button" class="btn btn-primary rounded-end" id="btn3">
+              <i class="fas fa-upload"></i
+            ></label>
+            <input
+              type="file"
+              class="form-control"
+              id="foto3"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="vista3(event)"
+              style="display: none"
+            />
+          </div>
+
+          <div class="input-group mb-4" style="width: 50vw">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="nombre4"
+              aria-describedby="sumoner4"
+              style="
+                background-color: #202b36;
+                color: white;
+                margin-right: 10px;
+              "
+              id="sum4"
+              placeholder="CARRY"
+            />
+            <label type="button" class="btn btn-primary rounded-end" id="btn4">
+              <i class="fas fa-upload"></i
+            ></label>
+            <input
+              type="file"
+              class="form-control"
+              id="foto4"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="vista4(event)"
+              style="display: none"
+            />
+          </div>
+
+          <div class="input-group mb-4" style="width: 50vw">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="nombre5"
+              aria-describedby="sumoner5"
+              style="
+                background-color: #202b36;
+                color: white;
+                margin-right: 10px;
+              "
+              id="sum5"
+              placeholder="SUPPORT"
+            />
+            <label type="button" class="btn btn-primary rounded-end" id="btn5">
+              <i class="fas fa-upload"></i
+            ></label>
+            <input
+              type="file"
+              class="form-control"
+              id="foto5"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="vista5(event)"
+              style="display: none"
+            />
+          </div>
+          <div class="input-group mb-4" style="width: 50vw">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="teamname"
+              aria-describedby="teamname"
+              style="
+                background-color: #202b36;
+                color: white;
+                margin-right: 10px;
+              "
+              id="tn"
+              placeholder="TEAM NAME"
+            />
+            <label type="button" class="btn btn-primary rounded-end align-middle" id="btn5" style="vertical-align: middle;padding-top: 2%;" onclick="changeColor()" title="Change Color">
+              <i class="fas fa-adjust"></i
+            ></label>
+            <input
+              type="button"
+              class="form-control"
+              id="foto5"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="vista5(event)"
+              style="display: none"
+            />
+          </div>
+          <div class="input-group mb-4" style="width: 50vw">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="textarea"
+              aria-describedby="textarea"
+              style="
+                background-color: #202b36;
+                color: white;
+                margin-right: 10px;
+              "
+              id="ta"
+              placeholder="TEXT AREA"
+            />
+            <label type="button" class="btn btn-primary rounded-end" id="btn5"  style="vertical-align: middle;padding-top: 2%;" onclick="changeColor2()" title="Change Color">
+              <i class="fas fa-adjust"></i
+            ></label>
+            <input
+              type="button"
+              class="form-control"
+              id="foto5"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="vista5(event)"
+              style="display: none"
+            />
+          </div>
+        </div>
+
+        <input
+          type="file"
+          class="form-control"
+          aria-describedby="inputGroupFileAddon04"
+          aria-label="Upload"
+          onchange="vistaBg(event)"
+          style="display: none"
+          id="foto6"
+        />
+     
+       
+    
+      
+        <div
+          style="display: flex; margin: auto"
+          class="d-flex flex-wrap justify-content-evenly"
+        >
+        <center>
+          <button
+            type="button"
+            class="btn btn-primary mb-4 mx-2"
+            style="width: 12em"
+            id="framesBtn"
+            onclick="changeFrame()"
+          >
+            <i class="fas fa-crop-alt fa-1x" style="font-size: 1.3em"></i>
+            FRAMES
+          </button>
+        </center>
+          <center>
+            <button
+              type="button"
+              class="btn btn-primary mb-4 mx-2"
+              style="width: 12em"
+              id="btn6"
+            >
+              <i class="fas fa-image fa-1x" style="font-size: 1.3em"></i>
+              BACKGROUND
+            </button>
+          </center>
+
+          <center>
+            <button
+              type="button"
+              class="btn btn-primary mb-4 mx-2"
+              style="width: 12em"
+              id="btnCapturar"
+            >
+              <i class="fas fa-camera fa-1x" style="font-size: 1.3em"></i>
+              DOWNLOAD
+            </button>
+          </center>
+         
+        </div>
+      </div>
+    </div>
+
+    <div style="position: relative; width: 80vw; font-size: auto; margin: auto">
+      <div id="contenedor" style="overflow: hidden">
+        <img src="rift.png" alt="" class="bg" style="z-index: 9" />
+
+        <!-- <div style="position: absolute;left: 0;top:0;overflow: hidden;">
+        <img src="bullcode.jpg" alt="" class="bg" style="z-index: 9;position: relative;overflow: hidden;width: 80vw;opacity: .5;height: 69vh;"></div>-->
+
+        <!--________________Nuevo fondo______________-->
+        <div
+          style="
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow: hidden;
+            display: none;
+          "
+          id="divNuevo"
+        >
+          <img
+            src="bullcode.jpg"
+            style="
+              height: 100%;
+              top: 50%;
+              left: 50%;
+              position: relative;
+              transform: translate(-50%, -50%);
+              width: auto;
+            "
+            id="nuevo"
+          />
+        </div>
+        <!--________________Marcos______________-->
+        <div
+          style="
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="bg10.png"
+            style="
+              height: 100%;
+              top: 50%;
+              left: 50%;
+              position: relative;
+              transform: translate(-50%, -50%);
+              width: auto;
+            "
+            id="mercos"
+          />
+        </div>
+
+        <!--Image 1-->
+        <div
+          style="
+            width: 15%;
+            height: 40%;
+            background-color: black;
+            position: absolute;
+            top: 14%;
+            left: 5%;
+            z-index: 2;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="teemo.png"
+            style="
+              height: 100%;
+              top: 50%;
+              left: 50%;
+              position: relative;
+              transform: translate(-50%, -50%);
+              width: auto;
+            "
+            id="img1"
+          />
+        </div>
+
+        <div
+          style="
+            width: 15%;
+            height: 10%;
+            position: absolute;
+            top: 54.5%;
+            left: 5%;
+            overflow: hidden;
+            z-index: 4;
+          "
+        >
+          <p
+            id="sumImg1"
+            style="
+              z-index: 999;
+              color: white;
+              text-align: center;
+              font-size: 1vw;
+            "
+          >
+            Summoner 1
+          </p>
+        </div>
+
+        <!--Image 2-->
+        <div
+          style="
+            width: 15%;
+            height: 40%;
+            background-color: black;
+            position: absolute;
+            top: 14%;
+            left: 23.7%;
+            z-index: 2;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="teemo.png"
+            style="
+              height: 100%;
+              top: 50%;
+              left: 50%;
+              position: relative;
+              transform: translate(-50%, -50%);
+              width: auto;
+            "
+            id="img2"
+          />
+        </div>
+
+        <div
+          style="
+            width: 15%;
+            height: 10%;
+            position: absolute;
+            top: 54.5%;
+            left: 23.7%;
+            overflow: hidden;
+            z-index: 4;
+          "
+        >
+          <p
+            id="sumImg2"
+            style="
+              z-index: 999;
+              color: white;
+              text-align: center;
+              font-size: 1vw;
+            "
+          >
+            Summoner 2
+          </p>
+        </div>
+
+        <!--Image 3-->
+        <div
+          style="
+            width: 15%;
+            height: 40%;
+            background-color: black;
+            position: absolute;
+            top: 14%;
+            left: 42.7%;
+            z-index: 2;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="teemo.png"
+            style="
+              height: 100%;
+              top: 50%;
+              left: 50%;
+              position: relative;
+              transform: translate(-50%, -50%);
+              width: auto;
+            "
+            id="img3"
+          />
+        </div>
+
+        <div
+          style="
+            width: 15%;
+            height: 10%;
+            position: absolute;
+            top: 54.5%;
+            left: 42.7%;
+            overflow: hidden;
+            z-index: 4;
+          "
+        >
+          <p
+            id="sumImg3"
+            style="
+              z-index: 999;
+              color: white;
+              text-align: center;
+              font-size: 1vw;
+            "
+          >
+            Summoner 3
+          </p>
+        </div>
+
+        <!--Image 4-->
+        <div
+          style="
+            width: 15%;
+            height: 40%;
+            background-color: black;
+            position: absolute;
+            top: 14%;
+            left: 61.4%;
+            z-index: 2;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="teemo.png"
+            style="
+              height: 100%;
+              top: 50%;
+              left: 50%;
+              position: relative;
+              transform: translate(-50%, -50%);
+              width: auto;
+            "
+            id="img4"
+          />
+        </div>
+
+        <div
+          style="
+            width: 15%;
+            height: 10%;
+            position: absolute;
+            top: 54.5%;
+            left: 61.4%;
+            overflow: hidden;
+            z-index: 4;
+          "
+        >
+          <p
+            id="sumImg4"
+            style="
+              z-index: 999;
+              color: white;
+              text-align: center;
+              font-size: 1vw;
+            "
+          >
+            Summoner 4
+          </p>
+        </div>
+
+        <!--Image 5-->
+        <div
+          style="
+            width: 15%;
+            height: 40%;
+            background-color: black;
+            position: absolute;
+            top: 14%;
+            left: 80%;
+            z-index: 2;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="teemo.png"
+            style="
+              height: 100%;
+              top: 50%;
+              left: 50%;
+              position: relative;
+              transform: translate(-50%, -50%);
+              width: auto;
+            "
+            id="img5"
+          />
+        </div>
+        <div
+          style="
+            width: 15%;
+            height: 10%;
+            position: absolute;
+            top: 54.5%;
+            left: 80%;
+            overflow: hidden;
+            z-index: 4;
+          "
+        >
+          <p
+            id="sumImg5"
+            style="
+              z-index: 999;
+              color: white;
+              text-align: center;
+              font-size: 1vw;
+            "
+          >
+            Summoner 5
+          </p>
+        </div>
+
+        <div  style="
+        width: 100%;
+        height: 40%;
+        position: absolute;
+        top: 70%;
+        text-align: center;
+        color: white;
+        z-index: 9;
+        overflow: hidden;
+      ">
+       <h1 id="nameTeam" style="color: white;"></h1>  
+    </div>
+    <div  style="
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top: 80%;
+    text-align: center;
+    color: white;
+    z-index: 9;
+    overflow: hidden;
+  ">
+  <p id="areaText" style="padding-right: 10%;padding-left: 10%;color: white;"></p>
+</div>
+
+        <div
+          style="
+            width: 15%;
+            height: 40%;
+            position: absolute;
+            top: 95%;
+            left: 85%;
+            z-index: 9;
+            overflow: hidden;
+          "
+        >
+        
+
+
+          <span style="font-size: 1.1vw">Team Legend | Beta</span>
+        </div>
+
+        <div
+        style="
+         
+          height: 40%;
+          position: absolute;
+          top: 95%;
+          left: 5%;
+          z-index: 9;
+          overflow: hidden;
+        "
+      >
+      
+
+
+        <span style="font-size: 1.1vw">
+          developed by <i class="fab fa-instagram"></i> just.fran.cisco</span>
+      </div>
+      </div>
+    </div>
+
+    <script>
+      //Definimos el botón para escuchar su click
+      const $boton = document.querySelector("#btnCapturar"), // El botón que desencadena
+        $objetivo = document.body.querySelector("#contenedor"); // A qué le tomamos la fotocanvas
+      // Nota: no necesitamos contenedor, pues vamos a descargarla
+
+      // Agregar el listener al botón
+      $boton.addEventListener("click", () => {
+        html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
+          .then((canvas) => {
+            // Cuando se resuelva la promesa traerá el canvas
+            // Crear un elemento <a>
+            let enlace = document.createElement("a");
+            enlace.download = "teamleagends.png";
+            // Convertir la imagen a Base64
+            enlace.href = canvas.toDataURL();
+            // Hacer click en él
+            enlace.click();
+          });
+      });
+    </script>
+
+    <script>
+      
+      function changeColor(){
+      if(document.getElementById("nameTeam").style.color =="white"){
+       document.getElementById("nameTeam").style.color ="black" 
+      }else{
+        document.getElementById("nameTeam").style.color ="white"
+      }
+
+       }
+
+       function changeColor2(){
+      if(document.getElementById("areaText").style.color =="white"){
+       document.getElementById("areaText").style.color ="black" 
+      }else{
+        document.getElementById("areaText").style.color ="white"
+      }
+
+       }
+     toggleFrame= true;
+       function changeFrame(){
+         
+         if(toggleFrame== true){
+          document.getElementById("mercos").src="bg5.png"
+          toggleFrame= false;
+         }else{
+          document.getElementById("mercos").src="bg10.png"
+          toggleFrame= true;
+         }
+       }
+    </script>
+
+    <script>
+      document.getElementById("btn1").addEventListener("click", function () {
+        console.log("click");
+        document.getElementById("foto1").click();
+      });
+
+      document.getElementById("btn2").addEventListener("click", function () {
+        document.getElementById("foto2").click();
+      });
+
+      document.getElementById("btn3").addEventListener("click", function () {
+        document.getElementById("foto3").click();
+      });
+
+      document.getElementById("btn4").addEventListener("click", function () {
+        document.getElementById("foto4").click();
+      });
+
+      document.getElementById("btn5").addEventListener("click", function () {
+        document.getElementById("foto5").click();
+      });
+
+      document.getElementById("btn6").addEventListener("click", function () {
+        document.getElementById("foto6").click();
+      });
+
+      var sum1 = document.getElementById("sum1");
+      sum1.addEventListener("keyup", textMod);
+
+      var sum1 = document.getElementById("sum1");
+      sum1.addEventListener("keyup", textMod);
+
+      var sum2 = document.getElementById("sum2");
+      sum2.addEventListener("keyup", textMod);
+
+      var sum3 = document.getElementById("sum3");
+      sum3.addEventListener("keyup", textMod);
+
+      var sum4 = document.getElementById("sum4");
+      sum4.addEventListener("keyup", textMod);
+
+      var sum5 = document.getElementById("sum5");
+      sum5.addEventListener("keyup", textMod);
+
+      var na = document.getElementById("tn");
+      na.addEventListener("keyup", textMod);
+
+      var at = document.getElementById("ta");
+      at.addEventListener("keyup", textMod);
+
+      function textMod() {
+        var sumImg1 = document.getElementById("sumImg1");
+        var sumImg2 = document.getElementById("sumImg2");
+        var sumImg3 = document.getElementById("sumImg3");
+        var sumImg4 = document.getElementById("sumImg4");
+        var sumImg5 = document.getElementById("sumImg5");
+        var tn = document.getElementById("tn");
+        var ta = document.getElementById("ta");
+        if (sum1.value != "") {
+          sumImg1.innerText = sum1.value;
+        } else {
+          sumImg1.innerText = "Summoner 1";
+        }
+        if (sum2.value != "") {
+          sumImg2.innerText = sum2.value;
+        } else {
+          sumImg2.innerText = "Summoner 2";
+        }
+        if (sum3.value != "") {
+          sumImg3.innerText = sum3.value;
+        } else {
+          sumImg3.innerText = "Summoner 3";
+        }
+        if (sum4.value != "") {
+          sumImg4.innerText = sum4.value;
+        } else {
+          sumImg4.innerText = "Summoner 4";
+        }
+        if (sum5.value != "") {
+          sumImg5.innerText = sum5.value;
+        } else {
+          sumImg5.innerText = "Summoner 5";
+        }
+
+        if (tn.value != "") {
+          nameTeam.innerText = tn.value;
+        } else {
+          nameTeam.innerText = "";
+        }
+        if (ta.value != "") {
+          areaText.innerText = ta.value;
+        } else {
+          areaText.innerText = "";
+        }
+      }
+
+      var vista = (event) => {
+        var inputImg = new FileReader();
+        var id_img = document.getElementById("img1");
+        var id_img2 = document.getElementById("img2");
+        inputImg.onload = () => {
+          if (inputImg.readyState == 2) {
+            id_img.src = inputImg.result;
+          }
+        };
+        inputImg.readAsDataURL(event.target.files[0]);
+      };
+
+      var vista2 = (event) => {
+        var inputImg2 = new FileReader();
+        var id_img2 = document.getElementById("img2");
+        inputImg2.onload = () => {
+          if (inputImg2.readyState == 2) {
+            id_img2.src = inputImg2.result;
+          }
+        };
+        inputImg2.readAsDataURL(event.target.files[0]);
+      };
+
+      var vista3 = (event) => {
+        var inputImg3 = new FileReader();
+        var id_img3 = document.getElementById("img3");
+        inputImg3.onload = () => {
+          if (inputImg3.readyState == 2) {
+            id_img3.src = inputImg3.result;
+          }
+        };
+        inputImg3.readAsDataURL(event.target.files[0]);
+      };
+
+      var vista4 = (event) => {
+        var inputImg4 = new FileReader();
+        var id_img4 = document.getElementById("img4");
+        inputImg4.onload = () => {
+          if (inputImg4.readyState == 2) {
+            id_img4.src = inputImg4.result;
+          }
+        };
+        inputImg4.readAsDataURL(event.target.files[0]);
+      };
+
+      var vista5 = (event) => {
+        var inputImg5 = new FileReader();
+        var id_img5 = document.getElementById("img5");
+        inputImg5.onload = () => {
+          if (inputImg5.readyState == 2) {
+            id_img5.src = inputImg5.result;
+          }
+        };
+        inputImg5.readAsDataURL(event.target.files[0]);
+      };
+
+      var vistaBg = (event) => {
+        var inputBg = new FileReader();
+        var id_imgBg = document.getElementById("nuevo");
+        var div = document.getElementById("divNuevo");
+        inputBg.onload = () => {
+          if (inputBg.readyState == 2) {
+            id_imgBg.src = inputBg.result;
+          }
+        };
+        inputBg.readAsDataURL(event.target.files[0]);
+        div.style.display = "inline";
+      };
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
